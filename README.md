@@ -1,10 +1,4 @@
-# book-record-management-10567
-
 This is a book record management API Backend for the management of records and books
-
-# API Documentation link
-
-https://documenter.getpostman.com/view/11423344/VUqyoZdU
 
 # Routes and Endpoints
 
