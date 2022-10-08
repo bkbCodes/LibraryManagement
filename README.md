@@ -43,7 +43,6 @@ GET: Get all issued books ✅
 
 ## /books/issued/withFine
 
-// TODO TASK // 🏁
 GET: Get all issued books with fine ✅
 
 # Subscription Types
@@ -52,14 +51,14 @@ Basic (3 months: 90 days)
 Standard (6 months: 180 days)
 Premium (12 months: 360 days)
 
-NOTE: dates will be in format mm/dd/yyyy
+NOTE: dates will be in format yyyy-mm-dd
 
-If the subscription date is 01/08/22
+If the subscription date is 2022-01-08 (8th Jan 2022)
 and Subscription type is Standard
-the valid till date will be 01/02/23
+the valid till date will be 2022-07-08 (8th Jul 2022)
 
-If he has an issued book and the issued book is to be returned at 01/01/23
+If he has an issued book and the issued book is to be returned at 2022-06-01
 If he missed the date of return, then he gets a fine of Rs. 100./
 
-If he has an issued book and the issued book is to be returned at 01/01/23
+If he has an issued book and the issued book is to be returned at 2022-06-01
 If he missed the date of return, and his subscription also expires, then he will get a fine of Rs 200./
