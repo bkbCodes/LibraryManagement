@@ -1,3 +1,4 @@
+const IssuedBook = require("../dtos/book-dto");
 const { BookModel, UserModel } = require("../models");
 
 exports.getAllBooks = async (req,res) =>{
@@ -53,7 +54,7 @@ exports.getAllIssuedBooks = async (req,res) =>{
         issuedBook: {$exists: true},
     }).populate("issuedBook");
 
-    const issuedBooks = users.forEach((each) => new IssuedBook(each));
+    const issuedBooks = users.map((each) => new IssuedBook(each));
 
     if(!issuedBooks){
         res.status(200).json({
@@ -90,13 +91,21 @@ exports.updateBookById = async (req,res) =>{
 };
 
 exports.getAllIssuedBooksWithFine = async (req,res) =>{
-    const currentDate = Date.now();
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate());
     const users = await UserModel.find({
         issuedBook: {$exists: true},
-        returnDate: {$lt: currentDate}
     }).populate("issuedBook");
 
-    const issuedBooks = users.forEach((each) => new IssuedBook(each));
+    const finedUsers = users.filter((each) => {
+        // if the user has missed the return date
+        const returnDate = new Date(each.returnDate);
+        if(returnDate.getTime() < Date.now()){
+            return each.issuedBook;
+        }
+    });
+
+    const issuedBooks = finedUsers.map((each) => new IssuedBook(each));
 
     if(!issuedBooks){
         res.status(200).json({

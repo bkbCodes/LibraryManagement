@@ -10,14 +10,14 @@ class IssuedBook{
     returnDate;
 
     constructor(user){
-        tihs._id = user.issuedBook._id;
-        tihs.name = user.issuedBook.name;
-        tihs.genre = user.issuedBook.genre;
-        tihs.pirce = user.issuedBook.pirce;
-        tihs.publisher = user.issuedBook.publisher;
-        tihs.issuedBy = user.name;
-        tihs.issuedDate = user.issuedDate;
-        tihs.returnDate = user.returnDate;
+        this._id = user.issuedBook._id;
+        this.name = user.issuedBook.name;
+        this.genre = user.issuedBook.genre;
+        this.pirce = user.issuedBook.pirce;
+        this.publisher = user.issuedBook.publisher;
+        this.issuedBy = user.name;
+        this.issuedDate = user.issuedDate;
+        this.returnDate = user.returnDate;
     }
 }
 

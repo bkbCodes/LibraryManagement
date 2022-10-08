@@ -20,11 +20,11 @@ const userSchema = new Schema({
             required: false,
         },
         issuedDate: {
-            type: Date,
+            type: String,
             required: false,
         },
         returnDate: {
-            type: Date,
+            type: String,
             required: false,
         },
         subscriptionType: {
